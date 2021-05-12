@@ -7,6 +7,8 @@
 VOID MOVEMENT(VOID);				//キャラの移動関数
 VOID MY_ALL_KEYDOWN_UPDATE(VOID);	//キーの入力状態を更新する関数
 
+VOID MENU(VOID); //メニュー画面関数
+
 //キーボードの入力を取得
 char AllKeyState[KEY_CODE_KIND] = { '\0' };		//すべてのキーの状態が入る
 char OldAllKeyState[KEY_CODE_KIND] = { '\0' };	//すべてのキーの状態(直前)が入る

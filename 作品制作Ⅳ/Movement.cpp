@@ -3,10 +3,10 @@
 #include "movement.h"
 
 
-/*
+
 VOID MOVEMENT(VOID)
 {
-
+	/*
 
 	BOOL IsMove = TRUE; //移動可能
 
@@ -15,7 +15,8 @@ VOID MOVEMENT(VOID)
 	if (MY_KEY_DOWN(KEY_INPUT_W) == TRUE
 		&& MY_KEY_DOWN(KEY_INPUT_D) == FALSE
 		&& MY_KEY_DOWN(KEY_INPUT_S) == FALSE
-		&& MY_KEY_DOWN(KEY_INPUT_A) == FALSE)
+		&& MY_KEY_DOWN(KEY_INPUT_A) == FALSE
+		&& IsMove == TRUE)
 	{
 		//player.IsMoveNaname = FALSE;	//斜め移動していない
 
@@ -44,7 +45,8 @@ VOID MOVEMENT(VOID)
 	if (MY_KEY_DOWN(KEY_INPUT_W) == FALSE
 		&& MY_KEY_DOWN(KEY_INPUT_D) == TRUE
 		&& MY_KEY_DOWN(KEY_INPUT_S) == FALSE
-		&& MY_KEY_DOWN(KEY_INPUT_A) == FALSE)
+		&& MY_KEY_DOWN(KEY_INPUT_A) == FALSE
+		&& IsMove == TRUE)
 	{
 		player.IsMoveNaname = FALSE;	//斜め移動していない
 
@@ -72,7 +74,8 @@ VOID MOVEMENT(VOID)
 	if (MY_KEY_DOWN(KEY_INPUT_W) == FALSE
 		&& MY_KEY_DOWN(KEY_INPUT_D) == FALSE
 		&& MY_KEY_DOWN(KEY_INPUT_S) == FALSE
-		&& MY_KEY_DOWN(KEY_INPUT_A) == TRUE)
+		&& MY_KEY_DOWN(KEY_INPUT_A) == TRUE
+		&& IsMove == TRUE)
 	{
 		player.IsMoveNaname = FALSE;	//斜め移動していない
 
@@ -100,7 +103,8 @@ VOID MOVEMENT(VOID)
 	if (MY_KEY_DOWN(KEY_INPUT_W) == FALSE
 		&& MY_KEY_DOWN(KEY_INPUT_D) == FALSE
 		&& MY_KEY_DOWN(KEY_INPUT_S) == TRUE
-		&& MY_KEY_DOWN(KEY_INPUT_A) == FALSE)
+		&& MY_KEY_DOWN(KEY_INPUT_A) == FALSE
+		&& IsMove == TRUE)
 	{
 		player.IsMoveNaname = FALSE;	//斜め移動していない
 
@@ -123,10 +127,20 @@ VOID MOVEMENT(VOID)
 		}
 		player.image.y += CharaSpeed;	//移動
 	}
+	*/
+
+	if (MY_KEY_DOWN(KEY_INPUT_ESCAPE) == TRUE)
+	{
+	   //ここにメニュー表示の関数を制作する。
+		IsMove = FALSE;
+
+		MENU();
+
+	}
 
 
 }
-	*/
+	
 
 //キーを押し上げたか、キーコードで判断する
 extern BOOL MY_KEY_UP(int KEY_INPUT_)
