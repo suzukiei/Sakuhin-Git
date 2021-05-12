@@ -150,16 +150,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MENU.cpp" />
     <ClCompile Include="Movement.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="class.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="enum.h" />
-    <ClInclude Include="menu.h" />
     <ClInclude Include="movement.h" />
-    <ClInclude Include="textevent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
