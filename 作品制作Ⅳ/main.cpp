@@ -2,11 +2,13 @@
 #include "define.h"
 #include "enum.h"
 
+void GameMain(void);
+void GameSceneMove(void);
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
 	//--------------------------------èâä˙ê›íËê›íË---------------------------------
-	ChangeWindowMode(TRUE);	
+	ChangeWindowMode(TRUE);
 	SetGraphMode(WINDOW_WIDTH, WINDOW_HEIGHT, GAME_COLOR);
 	SetWindowStyleMode(GAME_WINDOW_BAR);
 	SetMainWindowText(TEXT(GAME_WINDOW_NAME));
@@ -35,21 +37,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		MY_FPS_UPDATE();
 
-		switch (GameScene)
-		{
-		case GAME_SCENE_START:
-			MY_START();
-			break;
-		case GAME_SCENE_PLAY:
-			MY_PLAY();
-			break;
-		case GAME_SCENE_END:
-			MY_END();
-			break;
-		case GAME_SCENE_RULE:
-			MY_RULE();
-			break;
-		}
+		GameMain();
 
 		ScreenFlip();
 
@@ -67,4 +55,31 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	DxLib_End();
 
 	return 0;
+}
+
+void GameMain(void)
+{
+	GameSceneMove();
+	return;
+}
+
+void GameSceneMove(void)
+{
+	switch (GameScene)
+	{
+	case GAME_SCENE_START:
+		MY_START();
+		break;
+	case GAME_SCENE_PLAY:
+		MY_PLAY();
+		break;
+	case GAME_SCENE_END:
+		MY_END();
+		break;
+	case GAME_SCENE_RULE:
+		MY_RULE();
+		break;
+	}
+
+	return;
 }
