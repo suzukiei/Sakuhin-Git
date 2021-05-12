@@ -6,7 +6,7 @@
 
 #define GAME_WINDOW_BAR 0
 //GAME_NAME
-#define GAME_WINDOW_NAME "暗闇の眼"
+#define GAME_WINDOW_NAME "冥闇の眼"
 
 //FPS
 #define GAME_FPS	60
@@ -16,6 +16,16 @@
 //PATH
 #define PATH_MAX	255
 #define NAME_MAX	255
+#define MENU_WIDTH_POSITION 280 //メニュー背景
+#define MENU_HEIGHT_POSITION 180 //メニュー背景
+#define MENU_BUTTON_TITLE_WIDTH_POSITION 380 //タイトルへ戻るボタンの位置
+#define MENU_BUTTON_TITLE_HEIGHT_POSITION 280 //タイトルへ戻るボタンの位置
+#define MENU_BUTTON_SAVE_WIDTH_POSITION 380 //セーブボタンの位置
+#define MENU_BUTTON_SAVE_HEIGHT_POSITION 380 //セーブボタンの位置
+#define MENU_BUTTON_SELECT_TITLE_WIDTH_POSITION 370 //タイトル選択時の位置
+#define MENU_BUTTON_SELECT_TITLE_HEIGHT_POSITION 270 //タイトル選択時の位置
+#define MENU_BUTTON_SELECT_SAVE_WIDTH_POSITION 370 //セーブ選択時の位置
+#define MENU_BUTTON_SELECT_SAVE_HEIGHT_POSITION 370 //セーブ選択時の位置
 
 //FONT
 //#define FONT_PATH_MAX			255
@@ -81,14 +91,15 @@
 
 //MAP画像PATH
 //#define GAME_MAP_PATH(".png")
+#define GAME_MENU_DEMO TEXT(".\\image\\menu_demo.png")
 
 //制限時間
 #define GAME_TIME_LIMIT	60
 
-#define MAP_DIV_WIDTH		64
-#define MAP_DIV_HEIGHT	64
-#define MAP_DIV_TATE		10
-#define MAP_DIV_YOKO		4
+#define MAP_DIV_WIDTH		32
+#define MAP_DIV_HEIGHT		32
+#define MAP_DIV_TATE		30
+#define MAP_DIV_YOKO		29
 #define MAP_DIV_NUM	MAP_DIV_TATE * MAP_DIV_YOKO
 
 #define START_ERR_TITLE	TEXT("スタート位置エラー")
@@ -99,3 +110,39 @@
 
 #define MOUSE_R_CLICK_TITLE	TEXT("ゲーム中断")
 #define MOUSE_R_CLICK_CAPTION	TEXT("ゲームを中断し、タイトル画面に戻りますか？")
+
+
+typedef struct STRUCT_IPOINT
+{
+	int x = -1;
+	int y = -1;
+}IPOINT;
+
+//FONT
+typedef struct STRUCT_FONT
+{
+	char path[FONT_PATH_MAX];
+	char name[FONT_PATH_MAX];
+	int handle;
+	int size;
+	int bold;
+	int type;
+}FONT;
+
+typedef struct STRUCT_MAP_IMAGE
+{
+	char path[PATH_MAX];
+	int handle[MAP_DIV_NUM];
+	int kind[MAP_DIV_NUM];
+	int width;
+	int height;
+}MAPCHIP;
+
+typedef struct STRUCT_MAP
+{
+	GAME_MAP_KIND kind;
+	int x;
+	int y;
+	int width;
+	int height;
+}MAP;
